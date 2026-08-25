@@ -1,1 +1,1 @@
-AI Log: https://share.gemini.google/LtWzVAMaJql6
+Play with project 1: https://kcesaire.github.io/CMPM180_Project_1/
