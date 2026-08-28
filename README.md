@@ -1,1 +1,1 @@
-Play with project 1: https://kcesaire.github.io/CMPM180_Project_1/
+Play with project 1: https://kcesaire.github.io/CMPM180_Project_1_Permissions/
