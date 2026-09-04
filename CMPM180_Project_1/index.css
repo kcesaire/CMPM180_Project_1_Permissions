@@ -1,36 +1,67 @@
+/* =======================================================
+   1. PAGE-LEVEL LAYOUT (Flexbox Centering)
+   ======================================================= */
 body {
+    /* 
+       Flexbox turns the body into a flexible layout container, 
+       making alignment straightforward:
+    */
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* Horizontally centers children along the main axis */
+    align-items: center;     /* Vertically centers children along the cross axis */
+
+    /* 100vh = 100% of the viewport height (fills the full browser window vertically) */
     height: 100vh;
+    
+    /* Strips default browser margins so the page doesn't show unwanted scrollbars */
     margin: 0;
-    background-color: #f0f0f0;
-    font-family: monospace;
+    
+    background-color: #f0f0f0; /* Off-white / light-gray background */
+    font-family: monospace;    /* Fixed-width font, common for code and ciphers */
 }
 
+/* =======================================================
+   2. TEXT ELEMENT STYLING
+   ======================================================= */
 .word {
     color: black;
-    font-size: 2rem;
-    cursor: pointer;
-    user-select: none;
-    display: inline-block;
+    font-size: 2rem;           /* 2x the browser's default base font size (typically 32px) */
+    cursor: pointer;           /* Shows the hand/pointer icon when hovered, signaling it's clickable */
+    user-select: none;         /* Prevents text highlighting when the user rapidly clicks */
+    display: inline-block;     /* Allows CSS transform animations (translateX) to work on inline text */
 }
 
+/* =======================================================
+   3. ANIMATION CLASS
+   ======================================================= */
+/* 
+   This class is dynamically added and removed by `project.js` on every click.
+   When attached, it runs the `shake` keyframe animation for 0.2 seconds.
+*/
 .shake-animation {
     animation: shake 0.2s ease-in-out;
 }
 
+/* =======================================================
+   4. KEYFRAME TIMELINE
+   ======================================================= */
+/* 
+   `@keyframes` defines the stages of an animation from start (0%) to end (100%).
+   `translateX(px)` shifts the element left (-) or right (+) along the X-axis (horizontal).
+   The quick back-and-forth shifts create the "shake" or "rattle" effect on click.
+*/
 @keyframes shake {
     0% {
-        transform: translateX(3px);
+        transform: translateX(3px);   /* Shift right 3px */
     }
     25% {
-        transform: translateX(-3px);
+        transform: translateX(-3px);  /* Shift left 3px */
     }
     50% {
-        transform: translateX(-3px);
+        transform: translateX(-3px);  /* Hold left 3px */
     }
     75% {
-        transform: translateX(3px);
+        transform: translateX(3px);   /* Shift right 3px */
     }
+    /* At 100%, it automatically returns to its original position (0px) */
 }

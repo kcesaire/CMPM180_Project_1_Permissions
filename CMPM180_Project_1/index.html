@@ -1,15 +1,39 @@
+<!-- Informs the browser that this file is modern HTML5 -->
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <!-- Character encoding: UTF-8 supports virtually all symbols and languages -->
         <meta charset="UTF-8" />
+        
+        <!-- The title that appears on the browser tab -->
         <title>this message was not meant for you.</title>
+        
+        <!-- Links an external CSS file to apply visual styling -->
         <link rel="stylesheet" href="index.css">
     </head>
     <body>
+        <!-- 
+            `<div>` is a generic container block. 
+            `id="message-container"` acts as a unique identifier for CSS or JS targeting.
+        -->
         <div id="message-container">
+            <!-- 
+                `<span>` is an inline text container.
+                - id="curr-message": This exact ID is referenced in project.js via 
+                  document.getElementById('curr-message') to update text dynamically.
+                - class="word": Applies styling rules from index.css.
+                - "Loading...": Default placeholder text displayed until project.js loads 
+                  and replaces it with the cipher text.
+            -->
             <span id="curr-message" class="word">Loading...</span>
         </div>
 
+        <!-- 
+            Imports and executes `project.js`.
+            Placing this at the very bottom of the <body> ensures that all HTML elements
+            above it are already parsed and exist in memory before JavaScript attempts 
+            to find them with `document.getElementById()`.
+        -->
         <script src="project.js"></script>
     </body>
 </html>
